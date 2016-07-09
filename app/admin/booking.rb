@@ -1,4 +1,4 @@
-ActiveAdmin.register Timeslot do
+ActiveAdmin.register Booking do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -13,16 +13,11 @@ ActiveAdmin.register Timeslot do
 #   permitted
 # end
 
-  permit_params :start_at, :end_at
+  permit_params :activity_id, :user_id
 
   index do
-    column :start_at do |t|
-      t.start_at.to_formatted_s(:time)
-    end
-    column :end_at do |t|
-      t.end_at.to_formatted_s(:time)
-    end
+    column :activity
+    column :user
     actions
   end
-
 end

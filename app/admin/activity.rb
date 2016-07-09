@@ -13,6 +13,6 @@ ActiveAdmin.register Activity do
 #   permitted
 # end
   
-  permit_params :room_id, :teacher_id, :vacancies, :title, :activity_type, :description
+  permit_params :room_id, :teacher_id, :vacancies, :title, :activity_type, :description, :timeslot_id
 
 end
