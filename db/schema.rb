@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628023914) do
+ActiveRecord::Schema.define(version: 20160709224135) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160628023914) do
     t.integer  "vacancies"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.         "timeslot_id"
     t.index ["room_id"], name: "index_activities_on_room_id"
     t.index ["teacher_id"], name: "index_activities_on_teacher_id"
   end
@@ -56,6 +57,15 @@ ActiveRecord::Schema.define(version: 20160628023914) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "activity_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["activity_id"], name: "index_bookings_on_activity_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "rooms", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -65,6 +75,13 @@ ActiveRecord::Schema.define(version: 20160628023914) do
   create_table "teachers", force: :cascade do |t|
     t.string   "name"
     t.text     "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "timeslots", force: :cascade do |t|
+    t.time     "start_at"
+    t.time     "end_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -8,4 +8,19 @@ class Activity < ApplicationRecord
   
   belongs_to :room
   validates_presence_of :room
+
+  # un usuario no se puede inscribir a >1 activiy de un mismo timeslot
+  belongs_to :timeslot
+
+  has_many :bookings
+
+  def limited_vacancies?
+    !vacancies.nil?
+  end
+
+  def available_vacancies
+    if limited_vacancies?
+      vacancies - bookings.count
+    end
+  end
 end
