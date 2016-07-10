@@ -1,6 +1,7 @@
 class BookingsController < AuthorizedController
   def create
-    if Booking.create(booking_params)
+    @booking = Booking.new(booking_params)
+    if @booking.save
       flash.notice = t('.spot_saved')
     else
       flash.alert = t('.couldnt_save_spot')
