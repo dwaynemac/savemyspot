@@ -6,7 +6,7 @@ class BookingsController < AuthorizedController
     else
       flash.alert = t('.couldnt_save_spot')
     end
-    redirect_to root_path
+    redirect_to root_path(anchor: "activity-#{@booking.activity_id}")
   end
 
   def destroy
@@ -16,7 +16,7 @@ class BookingsController < AuthorizedController
       flash.alert = t('.couldnt_cancel')
     end
 
-    redirect_to root_path
+    redirect_to root_path(anchor: "activity-#{@booking.activity_id}")
   end
 
   private
