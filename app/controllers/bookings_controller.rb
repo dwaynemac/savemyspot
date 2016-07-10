@@ -1,12 +1,20 @@
 class BookingsController < AuthorizedController
   def create
-    Booking.create(booking_params)
+    if Booking.create(booking_params)
+      flash.notice = t('.spot_saved')
+    else
+      flash.alert = t('.couldnt_save_spot')
+    end
     redirect_to activities_path
   end
 
   def destroy
     @booking = Booking.find(params[:id])
-    @booking.destroy
+
+    unless @booking.destroy
+      flash.alert = t('.couldnt_cancel')
+    end
+
     redirect_to activities_path
   end
 

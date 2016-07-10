@@ -20,6 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  bookings:
+    create:
+      spot_saved: Spot saved!!
+      couldnt_save_spot: Sorry, couldn't save you a spot
+    destroy:
+      couldnt_cancel: Ups, couldn't cancel
   activities:
     activity_card:
       vacancies_left: "%{vacancies} vacancies left"
