@@ -1,13 +1,25 @@
 <div class="card">
+  <h3 class="card-header"><%= activity.title %></h3>
   <div class="card-block">
-    <h4 class="card-title"><%= activity.title %></h4>
-    <h6 class="card-subtitle text-muted"><%= activity.activity_type %></h6>
+    <h6 class="card-subtitle text-muted"> <%= room.name %>: <%= activity.activity_type %></h6>
   </div>
   <!-- <img data-src="..." alt="Card image"> -->
   <div class="card-block">
     <p class="card-text text-justify">
       <%= activity.description %>
     </p>
-    <%= link_to 'save me a spot', '#', class: 'btn btn-primary' %>
+  </div>
+  <div class="card-footer text-muted">
+    <% if booking = booking_for_activity(activity) -%>
+      <%= t('.you_have_a_spot_saved') %>
+      <%= button_to t('.cancel'), booking_path(id: booking.id), method: :delete, class: 'btn btn-link btn-danger', confirm: 'sure?' %>
+    <% else -%>
+      <% if activity.available_vacancies > 0 -%>
+        <%= button_to t('.save_me_a_spot'), bookings_path, method: 'POST', params: { booking: { activity_id: activity.id }}, class: "btn btn-primary" %>
+        <%= t('.vacancies_left', vacancies: activity.available_vacancies) %> 
+      <% else -%>
+        <%= t('.no_more_vacancies') %>
+      <% end -%>
+    <% end -%>
   </div>
 </div>

@@ -2,13 +2,13 @@
   <div class="row">
     <% @rooms.each do |room| -%>
       <div class="col-md-<%= col_width %>">
-        <%= room.name %>
-
         <% activity = activity_for(room,timeslot) %>
         <% if activity -%>
-          <%= render partial: 'activity_card', locals: { activity: activity } %>
-        <% else -%>
-          <%= t('.no_activity') %>
+          <%= render partial: 'activity_card',
+            locals: {
+              activity: activity,
+              room: room
+          } %>
         <% end -%>
       </div>
     <% end -%>

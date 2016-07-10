@@ -20,6 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activities:
+    activity_card:
+      vacancies_left: "%{vacancies} vacancies left"
+      no_more_vacancies: No more vacancies
+      save_me_a_spot: Save me a spot
+      you_have_a_spot_saved: You have a saved spot
+      cancel: Free my spot
   activerecord:
     errors:
       models:
@@ -27,3 +34,4 @@ en:
           attributes:
             base:
               no_vacancies_available: No vacancies available
+              one_spot_per_timeslot: Only one spot by timeslot allowed
