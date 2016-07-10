@@ -15,4 +15,13 @@ ActiveAdmin.register Activity do
   
   permit_params :room_id, :teacher_id, :vacancies, :title, :activity_type, :description, :timeslot_id
 
+  index do
+    column :timeslot
+    column :room
+    column :title
+    column :activity_type
+    column :vacancies
+    actions
+  end
+
 end
