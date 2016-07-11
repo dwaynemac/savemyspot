@@ -1,9 +1,16 @@
+require 'authentication_token'
+
 class User < ApplicationRecord
+
+  include AuthenticationToken
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  # removed :registerable to avoid sign up
-  devise :database_authenticatable,
-         :recoverable, :rememberable, :trackable, :validatable
+  # devise :database_authenticatable, :registerable
+  #       :recoverable, :rememberable, :trackable, :validatable
+
+  devise :database_authenticatable, :trackable
+
 
   has_many :bookings
 
