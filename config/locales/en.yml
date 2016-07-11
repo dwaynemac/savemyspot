@@ -20,6 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  token_session:
+    new:
+      send_me_login_link: Send me login link
+      input_your_email: Input your email here
   bookings:
     create:
       spot_saved: Spot saved!!
