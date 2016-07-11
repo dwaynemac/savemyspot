@@ -11,10 +11,5 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :trackable
 
-
   has_many :bookings
-
-  def name
-    email
-  end
 end

@@ -13,10 +13,11 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
-  permit_params :email
+  permit_params :email, :name
 
   form do |f|
     inputs do
+      input :name
       input :email
     end
     actions
