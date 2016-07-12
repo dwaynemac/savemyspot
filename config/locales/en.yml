@@ -23,6 +23,7 @@ en:
   token_mailer:
     login_link:
       click_or_copy_paste_following_link: Click on following link to login
+      your_login_link: Here's your login link
   token_session:
     new:
       send_me_login_link: Send me login link
