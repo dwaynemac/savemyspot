@@ -1,7 +1,7 @@
 <% @timeslots.each do |timeslot| -%>
   <div class="row">
     <% @rooms.each do |room| -%>
-      <div class="col-md-<%= col_width %>">
+      <div class="col-xs-<%= col_width %>">
         <% activity = activity_for(room,timeslot) %>
         <% if activity -%>
           <%= render partial: 'activity_card',
