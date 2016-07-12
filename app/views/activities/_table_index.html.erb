@@ -1,0 +1,29 @@
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th></th>
+      <% @rooms.each do |room| -%>
+        <th class="text-xs-center text-uppercase"><%= room.name %></th>
+      <% end -%>
+    </tr>
+  </thead>
+  <tbody>
+    <% @timeslots.each do |timeslot| -%>
+      <tr>
+        <th scope="row"><%= timeslot.start_at.to_formatted_s(:time) %> - <%= timeslot.end_at.to_formatted_s(:time) %></th>
+      <% @rooms.each do |room| -%>
+        <td>
+        <% activity = activity_for(room,timeslot) %>
+        <% if activity -%>
+          <%= render partial: 'activity_card',
+            locals: {
+              activity: activity,
+              room: room
+          } %>
+        <% end -%>
+        </td>
+      <% end -%>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>

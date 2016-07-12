@@ -1,29 +1,29 @@
-<table class="table">
-  <thead class="thead-inverse">
-    <tr>
-      <th></th>
+<% @timeslots.each do |timeslot| -%>
+  <div class="row">
+    <div class="col-sm-2">
+      <h5><%= timeslot.start_at.to_formatted_s(:time) %> - <%= timeslot.end_at.to_formatted_s(:time) %></h5>
+    </div>
+    <div class="col-sm-10">
       <% @rooms.each do |room| -%>
-        <th class="text-xs-center text-uppercase"><%= room.name %></th>
+        <div class="row">
+          <div class="col-sm-2">
+            <h6><%= room.name %></h6>
+          </div>
+          <div class="col-sm-10">
+            <% activity = activity_for(room,timeslot) %>
+            <% if activity -%>
+              <%= render partial: 'activity_card',
+                locals: {
+                  activity: activity,
+                  room: room
+              } %>
+            <% end -%>
+          </div>
+        </div>
       <% end -%>
-    </tr>
-  </thead>
-  <tbody>
-    <% @timeslots.each do |timeslot| -%>
-      <tr>
-        <th scope="row"><%= timeslot.start_at.to_formatted_s(:time) %> - <%= timeslot.end_at.to_formatted_s(:time) %></th>
-      <% @rooms.each do |room| -%>
-        <td>
-        <% activity = activity_for(room,timeslot) %>
-        <% if activity -%>
-          <%= render partial: 'activity_card',
-            locals: {
-              activity: activity,
-              room: room
-          } %>
-        <% end -%>
-        </td>
-      <% end -%>
-      </tr>
-    <% end -%>
-  </tbody>
-</table>
+    </div>
+  </div>
+<% end -%>
+
+
+<%# render "table_index" %>
