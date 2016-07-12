@@ -5,21 +5,21 @@
     </div>
     <div class="col-sm-10">
       <% @rooms.each do |room| -%>
-        <div class="row">
-          <div class="col-sm-2">
-            <h6 class="font-weight-bold text-uppercase"><%= room.name %></h6>
+        <% activity = activity_for(room,timeslot) %>
+        <% if activity -%>
+          <div class="row">
+            <div class="col-sm-2">
+              <h6 class="font-weight-bold text-uppercase"><%= room.name %></h6>
+            </div>
+            <div class="col-sm-10">
+                <%= render partial: 'activity_card',
+                  locals: {
+                    activity: activity,
+                    room: room
+                } %>
+            </div>
           </div>
-          <div class="col-sm-10">
-            <% activity = activity_for(room,timeslot) %>
-            <% if activity -%>
-              <%= render partial: 'activity_card',
-                locals: {
-                  activity: activity,
-                  room: room
-              } %>
-            <% end -%>
-          </div>
-        </div>
+        <% end -%>
       <% end -%>
     </div>
   </div>
