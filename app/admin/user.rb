@@ -15,12 +15,26 @@ ActiveAdmin.register User do
 
   permit_params :email, :name
 
+  index do
+    selectable_column
+    column :name
+    column :email
+    actions
+  end
+
   form do |f|
     inputs do
       input :name
       input :email
     end
     actions
+  end
+
+  batch_action :send_login_link do |ids|
+    batch_action_collection.find(ids).each do |user|
+      TokenMailer.login_link(user).deliver_now
+    end
+    redirect_to collection_path, alert: "Links have been delivered"
   end
 
 
