@@ -14,12 +14,16 @@
       <%= t('.you_have_a_spot_saved') %>
       <%= button_to t('.cancel'), booking_path(id: booking.id), method: :delete, class: 'btn btn-link btn-danger btn-block', confirm: 'sure?' %>
     <% else -%>
-      <% if activity.available_vacancies > 0 -%>
-        <%= button_to t('.save_me_a_spot'), bookings_path, method: 'POST', params: { booking: { activity_id: activity.id }}, class: "btn btn-primary btn-block" %>
-        <%= t('.vacancies_left', vacancies: activity.available_vacancies) %> 
-      <% else -%>
-        <%= t('.no_more_vacancies') %>
+      <% if activity.limited_vacancies? -%>
+        <% if activity.available_vacancies > 0 -%>
+          <%= button_to t('.save_me_a_spot'), bookings_path, method: 'POST', params: { booking: { activity_id: activity.id }}, class: "btn btn-primary btn-block" %>
+          <%= t('.vacancies_left', vacancies: activity.available_vacancies) %> 
+        <% else -%>
+          <%= t('.no_more_vacancies') %>
+        <% end -%>
       <% end -%>
+    <% else -%>
+        <%= button_to t('.add_to_my_activities'), bookings_path, method: 'POST', params: { booking: { activity_id: activity.id }}, class: "btn btn-primary btn-block" %>
     <% end -%>
   </div>
 </div>

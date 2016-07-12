@@ -45,6 +45,7 @@ en:
       vacancies_left: "%{vacancies} vacancies left"
       no_more_vacancies: No more vacancies
       save_me_a_spot: Save me a spot
+      add_to_my_activities: Add to my activities
       you_have_a_spot_saved: You have a saved spot
       cancel: Free my spot
   activerecord:
