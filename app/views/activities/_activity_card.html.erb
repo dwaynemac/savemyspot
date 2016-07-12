@@ -1,10 +1,7 @@
 <div class="card" id="activity-<%= activity.id %>">
   <div class="card-header" data-toggle="collapse" href="#description-<%= activity.id %>">
-    <span class="pull-xs-right octicon octicon-triangle-down m-t-1"></span>
-    <h3><%= activity.title %></h3>
-  </div>
-  <div class="card-block">
-    <h6 class="card-subtitle text-muted"><%= activity.activity_type %></h6>
+    <span class="pull-xs-right octicon octicon-triangle-down"></span>
+    <%= activity.title %> (<%= activity.activity_type %>)
   </div>
   <!-- <img data-src="..." alt="Card image"> -->
   <div id="description-<%= activity.id %>" class="card-block collapse out">
