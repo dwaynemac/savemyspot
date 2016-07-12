@@ -20,10 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  token_mailer:
+    login_link:
+      click_or_copy_paste_following_link: Click on following link to login
   token_session:
     new:
       send_me_login_link: Send me login link
       input_your_email: Input your email here
+    create:
+      email_not_registered: Email not registered
+      link_sent: "Link sent to %{email}!"
   bookings:
     create:
       spot_saved: Spot saved!!
