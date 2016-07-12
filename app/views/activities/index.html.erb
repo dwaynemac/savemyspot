@@ -1,7 +1,35 @@
-<% @timeslots.each do |timeslot| -%>
+<%#@timeslots.each do |timeslot| -%>
   <div class="row">
-    <% @rooms.each do |room| -%>
+    <%#@rooms.each do |room| -%>
       <div class="col-xs-<%= col_width %>">
+        <%#activity = activity_for(room,timeslot) %>
+        <%#if activity -%>
+          <%# render partial: 'activity_card',
+            locals: {
+              activity: activity,
+              room: room
+          } %>
+        <%#end -%>
+      </div>
+    <%#end -%>
+  </div>
+<%#end -%>
+
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th></th>
+      <% @rooms.each do |room| -%>
+        <th class="text-xs-center text-uppercase"><%= room.name %></th>
+      <% end -%>
+    </tr>
+  </thead>
+  <tbody>
+    <% @timeslots.each do |timeslot| -%>
+      <tr>
+        <th scope="row"><%= timeslot.start_at.to_formatted_s(:time) %> - <%= timeslot.end_at.to_formatted_s(:time) %></th>
+      <% @rooms.each do |room| -%>
+        <td>
         <% activity = activity_for(room,timeslot) %>
         <% if activity -%>
           <%= render partial: 'activity_card',
@@ -10,7 +38,9 @@
               room: room
           } %>
         <% end -%>
-      </div>
+        </td>
+      <% end -%>
+      </tr>
     <% end -%>
-  </div>
-<% end -%>
+  </tbody>
+</table>
