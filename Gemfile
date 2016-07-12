@@ -17,6 +17,8 @@ gem 'sass-rails', '~> 5.0'
 # Use Bootstrap style framework
 gem 'bootstrap', '~> 4.0.0.alpha3'
 
+gem 'octicons-rails'
+
 # For bootstrap tooltips and popovers
 source 'https://rails-assets.org' do
     gem 'rails-assets-tether', '>= 1.1.0'
