@@ -1,5 +1,5 @@
 <% @timeslots.each do |timeslot| -%>
-  <div class="row">
+  <div class="row" id="timeslot-<%= timeslot.id %>">
     <div class="col-sm-2">
       <h5><%= timeslot.start_at.to_formatted_s(:time) %> - <%= timeslot.end_at.to_formatted_s(:time) %></h5>
     </div>
