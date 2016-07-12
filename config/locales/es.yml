@@ -1,5 +1,4 @@
 # encoding: utf-8
----
 es:
   token_mailer:
     login_link:
@@ -39,7 +38,6 @@ es:
         attributes:
           base:
             no_vacancies_available: No quedan vacantes disponibles
-            one_spot_per_timeslot: Solo podés reservar un lugar por franja horaria
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"
