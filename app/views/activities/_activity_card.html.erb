@@ -1,7 +1,7 @@
 <div class="card" id="activity-<%= activity.id %>">
   <div class="card-header" data-toggle="collapse" href="#description-<%= activity.id %>">
     <span class="pull-xs-right octicon octicon-triangle-down"></span>
-    <%= activity.title %> (<%= activity.activity_type %>)
+    <%= activity.title %>, <%= activity.teacher.name %>(<%= activity.activity_type %>)
   </div>
   <!-- <img data-src="..." alt="Card image"> -->
   <div id="description-<%= activity.id %>" class="card-block collapse out">

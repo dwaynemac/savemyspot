@@ -33,12 +33,12 @@ es:
       all_activities: Programa
       my_activities: Mi line up
   activerecord:
-    models:
-      booking:
-        attributes:
-          base:
-            no_vacancies_available: No quedan vacantes disponibles
     errors:
+      models:
+        booking:
+          attributes:
+            base:
+              no_vacancies_available: No quedan vacantes disponibles
       messages:
         record_invalid: "La validación falló: %{errors}"
         restrict_dependent_destroy:
