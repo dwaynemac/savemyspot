@@ -11,5 +11,5 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :trackable
 
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 end
