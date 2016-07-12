@@ -48,6 +48,10 @@ en:
       add_to_my_activities: Add to my activities
       you_have_a_spot_saved: You have a saved spot
       cancel: Free my spot
+  layouts:
+    application:
+      all_activities: All activities
+      my_activities: My schedule
   activerecord:
     errors:
       models:

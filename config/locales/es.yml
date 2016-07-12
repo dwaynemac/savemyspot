@@ -1,11 +1,44 @@
 ---
 es:
+  token_mailer:
+    login_link:
+      click_button_to_login: Hacé click en el siguiente botón para iniciar tu sesión
+      your_login_link: Tu link para log in
+      if_button_wont_work_copy_paste_link: Si el botón no funciona copiá el siguiente link y copialo en tu navegador
+  token_session:
+    new:
+      send_me_login_link: Enviar link para login
+      input_your_email: Ingresá tu e-mail acá
+    create:
+      email_not_registered: Este E-mail no está registrado
+      link_sent: "Enviamos el link a %{email}!"
+      didnt_recieve_resend: "¿No te llegó el mail? Esperá unos minutos y reintentá"
+      resend: reenviar
+  bookings:
+    create:
+      spot_saved: ¡Lugar reservado!
+      couldnt_save_spot: Ups, no pudimos reservar el lugar
+    destroy:
+      couldnt_cancel: Ups, no pudimos cancelar la reserva
+  activities:
+    activity_card:
+      vacancies_left: "Quedan %{vacancies} lugares"
+      no_more_vacancies: No hay más lugares
+      save_me_a_spot: Reservar un lugar
+      add_to_my_activities: Agregar a mi calendario
+      you_have_a_spot_saved: Tenés un lugar reservado
+      cancel: Liberar mi lugar
+  layouts:
+    application:
+      all_activities: Programa
+      my_activities: Mi line up
   activerecord:
     models:
       booking:
         attributes:
           base:
             no_vacancies_available: No quedan vacantes disponibles
+            one_spot_per_timeslot: Solo podés reservar un lugar por franja horaria
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"
