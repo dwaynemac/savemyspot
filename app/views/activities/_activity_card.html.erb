@@ -21,9 +21,9 @@
         <% else -%>
           <%= t('.no_more_vacancies') %>
         <% end -%>
+      <% else -%>
+          <%= button_to t('.add_to_my_activities'), bookings_path, method: 'POST', params: { booking: { activity_id: activity.id }}, class: "btn btn-primary btn-block" %>
       <% end -%>
-    <% else -%>
-        <%= button_to t('.add_to_my_activities'), bookings_path, method: 'POST', params: { booking: { activity_id: activity.id }}, class: "btn btn-primary btn-block" %>
     <% end -%>
   </div>
 </div>
