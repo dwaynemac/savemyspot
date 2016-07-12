@@ -1,13 +1,13 @@
 <% @timeslots.each do |timeslot| -%>
   <div class="row" id="timeslot-<%= timeslot.id %>">
     <div class="col-sm-2">
-      <h5><%= timeslot.start_at.to_formatted_s(:time) %> - <%= timeslot.end_at.to_formatted_s(:time) %></h5>
+      <h5 class="font-weight-bold"><%= timeslot.start_at.to_formatted_s(:time) %> - <%= timeslot.end_at.to_formatted_s(:time) %></h5>
     </div>
     <div class="col-sm-10">
       <% @rooms.each do |room| -%>
         <div class="row">
           <div class="col-sm-2">
-            <h6><%= room.name %></h6>
+            <h6 class="font-weight-bold text-uppercase"><%= room.name %></h6>
           </div>
           <div class="col-sm-10">
             <% activity = activity_for(room,timeslot) %>
