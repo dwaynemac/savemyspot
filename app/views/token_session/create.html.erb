@@ -1,3 +1,8 @@
-<div class="card card-block">
-<%= t('.link_sent', email: @user.email) %>
+<div class="card">
+  <div class="card-block">
+    <%= t('.link_sent', email: @user.email) %>
+  </div>
+  <div class="card-footer text-muted">
+    <%= t('.didnt_recieve_resend') %>: <%= link_to t('.resend'), session_path(:user, user: { email: @user.email }), method: :post, data: { user: { email: @user.email }} %>
+  </div>
 </div>

@@ -22,8 +22,9 @@
 en:
   token_mailer:
     login_link:
-      click_or_copy_paste_following_link: Click on following link to login
+      click_button_to_login: Click on following button to login
       your_login_link: Here's your login link
+      if_button_wont_work_copy_paste_link: If button doesn't work copy the following link and paste it on your browser
   token_session:
     new:
       send_me_login_link: Send me login link
@@ -31,6 +32,8 @@ en:
     create:
       email_not_registered: Email not registered
       link_sent: "Link sent to %{email}!"
+      didnt_recieve_resend: "Didn't recieve the email? Wait for a couple of minutes and then retry"
+      resend: resend
   bookings:
     create:
       spot_saved: Spot saved!!
