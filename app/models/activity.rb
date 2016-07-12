@@ -12,7 +12,7 @@ class Activity < ApplicationRecord
   # un usuario no se puede inscribir a >1 activiy de un mismo timeslot
   belongs_to :timeslot
 
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 
   def limited_vacancies?
     !vacancies.nil?
