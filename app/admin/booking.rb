@@ -16,6 +16,7 @@ ActiveAdmin.register Booking do
   permit_params :activity_id, :user_id
 
   index do
+    selectable_column
     column :activity
     column :user
     actions
