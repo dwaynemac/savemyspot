@@ -37,5 +37,12 @@ ActiveAdmin.register User do
     redirect_to collection_path, alert: "Links have been delivered"
   end
 
+  batch_action :send_first_login_email do |ids|
+    batch_action_collection.find(ids).each do |user|
+      TokenMailer.first_login(user).deliver_now
+    end
+    redirect_to collection_path, alert: "Links have been delivered"
+  end
+
 
 end

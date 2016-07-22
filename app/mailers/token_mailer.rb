@@ -1,8 +1,13 @@
 class TokenMailer < ApplicationMailer
-  
+
   def login_link(user)
     @url = token_login_url(user)
     mail(to: user.email, subject: t('.your_login_link'))
+  end
+
+  def first_login(user)
+    @url = token_login_url(user)
+    mail(to: user.email, subject: t('.welcome'))
   end
 
   private
