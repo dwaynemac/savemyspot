@@ -93,6 +93,6 @@ ActionMailer::Base.smtp_settings = {
   :authentication => :plain,
   :user_name      => ENV['GMAIL_USERNAME'],
   :password       => ENV['GMAIL_PASSWORD'],
-  :domain         => 'derosemethod.org',
+  :domain         => 'metododerose.org',
   :enable_starttls_auto => true
 }
