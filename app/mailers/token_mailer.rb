@@ -1,3 +1,4 @@
+# encoding: utf-8
 class TokenMailer < ApplicationMailer
 
   def login_link(user)
@@ -7,7 +8,7 @@ class TokenMailer < ApplicationMailer
 
   def first_login(user)
     @url = token_login_url(user)
-    mail(to: user.email, subject: t('.welcome'))
+    mail(to: user.email, subject: "Pre-registro Avant Première")
   end
 
   private
