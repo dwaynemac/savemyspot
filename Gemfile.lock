@@ -50,6 +50,16 @@ GIT
       request_store (~> 1.0)
 
 GIT
+  remote: git://github.com/dwaynemac/active_admin_import.git
+  revision: 3994313f8fd3cf765d42419c0c6e9d59ddfc794e
+  specs:
+    active_admin_import (3.0.0.pre)
+      activerecord-import (>= 0.14)
+      rails (>= 4.0)
+      rchardet (~> 1.6)
+      rubyzip (~> 1.2)
+
+GIT
   remote: git://github.com/justinfrench/formtastic.git
   revision: f591abe68fe0d3de338425b910e4316b5dcf8fd7
   specs:
@@ -65,15 +75,6 @@ GIT
       activerecord (> 5.x)
       activesupport (> 5.x)
       builder (~> 3.1)
-
-PATH
-  remote: ~/ws/active_admin_import
-  specs:
-    active_admin_import (3.0.0.pre)
-      activerecord-import (>= 0.14)
-      rails (>= 4.0)
-      rchardet (~> 1.6)
-      rubyzip (~> 1.2)
 
 GEM
   remote: https://rubygems.org/
