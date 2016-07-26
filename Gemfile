@@ -43,6 +43,7 @@ gem 'devise', '> 4.x'
 # ActiveAdmin compatible with Rails 5
 gem 'activeadmin', github: 'activeadmin'
 gem 'responsive_active_admin'
+gem 'active_admin_theme' # flat theme
 gem 'active_admin_import', github: "dwaynemac/active_admin_import"
 
 
