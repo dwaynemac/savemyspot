@@ -7,6 +7,7 @@ ActiveAdmin.register_page "Dashboard" do
     Room.all.each do |room|
       panel room.name do
         table_for room.activities do
+          column :timeslot
           column :title
           column :teacher
           column :vacancies
