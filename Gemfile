@@ -43,6 +43,9 @@ gem 'devise', '> 4.x'
 # ActiveAdmin compatible with Rails 5
 gem 'activeadmin', github: 'activeadmin'
 gem 'responsive_active_admin'
+gem 'active_admin_import', path: '~/ws/active_admin_import' # github: "dwaynemac/active_admin_import"
+
+
 gem 'ransack',    github: 'activerecord-hackery/ransack'
 gem 'kaminari',   github: 'amatsuda/kaminari', branch: '0-17-stable'
 gem 'formtastic', github: 'justinfrench/formtastic'

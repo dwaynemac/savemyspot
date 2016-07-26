@@ -15,6 +15,8 @@ ActiveAdmin.register User do
 
   permit_params :email, :name
 
+  active_admin_import
+
   index do
     selectable_column
     column :name
