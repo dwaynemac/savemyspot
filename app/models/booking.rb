@@ -11,7 +11,15 @@ class Booking < ApplicationRecord
 
   after_save :remove_other_bookings_on_timeslot
 
+  after_save :send_email_on_first_booking
+
   private
+
+  def send_email_on_first_booking
+    unless user.sent_confirmation_email?
+      TransactionalMailer.confirmation(user).deliver_now # this will set sent_confirmation_email flag 
+    end
+  end
 
   def remove_other_bookings_on_timeslot
     if activity 
