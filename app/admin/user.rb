@@ -13,7 +13,7 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
-  permit_params :email, :name
+  permit_params :email, :name, :sent_confirmation_email
 
   active_admin_import
 
