@@ -14,6 +14,9 @@ class Activity < ApplicationRecord
 
   has_many :bookings, dependent: :destroy
 
+  has_attached_file :poster
+  validates_attachment_content_type :poster, content_type: /\Aimage\/.*\Z/
+
   def limited_vacancies?
     !vacancies.nil?
   end

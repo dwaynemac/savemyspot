@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160728133630) do
+ActiveRecord::Schema.define(version: 20160729185857) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -33,9 +33,13 @@ ActiveRecord::Schema.define(version: 20160728133630) do
     t.text     "description"
     t.string   "activity_type"
     t.integer  "vacancies"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "timeslot_id"
+    t.string   "poster_file_name"
+    t.string   "poster_content_type"
+    t.integer  "poster_file_size"
+    t.datetime "poster_updated_at"
     t.index ["room_id"], name: "index_activities_on_room_id"
     t.index ["teacher_id"], name: "index_activities_on_teacher_id"
   end

@@ -13,7 +13,14 @@ ActiveAdmin.register Activity do
 #   permitted
 # end
   
-  permit_params :room_id, :teacher_id, :vacancies, :title, :activity_type, :description, :timeslot_id
+  permit_params :room_id,
+                :teacher_id,
+                :vacancies,
+                :title,
+                :activity_type,
+                :description,
+                :timeslot_id,
+                :poster
 
   index do
     column :timeslot
@@ -22,6 +29,33 @@ ActiveAdmin.register Activity do
     column :activity_type
     column :vacancies
     actions
+  end
+
+  show do
+    attributes_table do
+      row :teacher
+      row :room
+      row :timeslot
+      row :activity_type
+      row :vacancies
+      row :poster do
+        image_tag resource.poster.url
+      end
+    end
+  end
+
+  form html: { multipart: true } do |f|
+    f.semantic_errors
+    f.inputs do
+      f.input :teacher
+      f.input :room
+      f.input :timeslot
+      f.input :title
+      f.input :activity_type
+      f.input :vacancies
+      f.input :poster, as: :file
+    end
+    f.actions
   end
 
 end

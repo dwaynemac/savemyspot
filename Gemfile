@@ -54,6 +54,8 @@ gem 'draper',     github: 'audionerd/draper', branch: 'rails5', ref: 'e816e0e587
 # To fix a Draper deprecation error
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 
+gem 'paperclip', '~> 5.0.0.beta1'
+gem 'aws-sdk', '~> 2.3'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
