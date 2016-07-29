@@ -3,7 +3,6 @@
     <span class="pull-xs-right octicon octicon-triangle-down"></span>
     <%= activity.title %><%= ", #{activity.teacher.name}" if activity.teacher %> (<%= activity.activity_type %>)
   </div>
-  <img class="card-img-top" src="<%= activity.poster.url %>" />
   <div id="description-<%= activity.id %>" class="card-block collapse out">
     <p class="card-text text-justify">
       <%= activity.description %>
