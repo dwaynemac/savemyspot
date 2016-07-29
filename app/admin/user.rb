@@ -28,6 +28,7 @@ ActiveAdmin.register User do
     inputs do
       input :name
       input :email
+      input :sent_confirmation_email
     end
     actions
   end
