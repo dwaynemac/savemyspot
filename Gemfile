@@ -9,6 +9,8 @@ gem 'rails', '>= 5.0.0.rc2', '< 5.1'
 gem 'sqlite3', group: [:development, :test]
 gem 'pg', group: [:production]
 
+gem 'dalli'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
