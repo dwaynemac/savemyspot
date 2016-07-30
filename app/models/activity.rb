@@ -14,7 +14,7 @@ class Activity < ApplicationRecord
 
   has_many :bookings, dependent: :destroy
 
-  has_attached_file :poster, s3_host_name: "s3-#{ENV.fetch('AWS_REGION')}.amazonaws.com"
+  has_attached_file :poster, s3_host_name: "s3-#{ENV.fetch('AWS_REGION'){nil}}.amazonaws.com"
   validates_attachment_content_type :poster, content_type: /\Aimage\/.*\Z/
 
   def limited_vacancies?

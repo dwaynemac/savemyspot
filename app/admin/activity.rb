@@ -58,4 +58,9 @@ ActiveAdmin.register Activity do
     f.actions
   end
 
+  collection_action :clear_cache do
+    Rails.cache.clear
+    redirect_to admin_root_path, notice: 'cache cleared'
+  end
+
 end
