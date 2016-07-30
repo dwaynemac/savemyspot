@@ -12,4 +12,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :trackable
 
   has_many :bookings, dependent: :destroy
+
+  validates :email, uniqueness: true
 end
