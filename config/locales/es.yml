@@ -31,7 +31,7 @@ es:
   layouts:
     application:
       all_activities: Programa
-      my_activities: Mi line up
+      my_activities: Mis Reservas
   activerecord:
     errors:
       models:
