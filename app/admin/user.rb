@@ -32,6 +32,7 @@ ActiveAdmin.register User do
       input :name
       input :email
       input :sent_confirmation_email
+      input :sent_first_login_link
     end
     actions
   end
