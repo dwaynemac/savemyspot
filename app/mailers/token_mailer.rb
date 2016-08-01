@@ -8,6 +8,7 @@ class TokenMailer < ApplicationMailer
 
   def first_login(user)
     @url = token_login_url(user)
+    user.update_attribute(:sent_first_login_link, true)
     mail(to: user.email, subject: "Pre-registro Avant Première")
   end
 
