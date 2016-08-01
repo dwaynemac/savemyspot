@@ -15,6 +15,7 @@ ActiveAdmin.register_page "Dashboard" do
           column :title
           column :teacher
           column :vacancies
+          column :available_vacancies
         end
       end
     end
