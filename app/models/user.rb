@@ -13,5 +13,5 @@ class User < ApplicationRecord
 
   has_many :bookings, dependent: :destroy
 
-  validates :email, uniqueness: true
+  validates :email, uniqueness: true, allow_blank: true
 end
