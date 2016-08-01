@@ -23,6 +23,7 @@ ActiveAdmin.register User do
     column :email
     column :sent_first_login_link
     column :sent_confirmation_email
+    column :sign_in_count
     actions
   end
 
