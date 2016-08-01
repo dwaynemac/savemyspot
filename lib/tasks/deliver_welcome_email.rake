@@ -1,9 +1,9 @@
 task :deliver_welcome_email => :environment do
-  return unless Date.today == Date.civil(2016,8,1)
-  User.all.each do |user|
+  User.where("sent_first_login_link IS NULL OR NOT sent_first_login_link").each do |user|
     if user.authentication_token.blank?
       user.save # renew auth token
       TokenMailer.first_login(user).deliver_now
+      user.update_attribute(:sent_first_login_link, true)
     end
   end
 end
